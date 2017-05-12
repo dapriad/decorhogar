@@ -1,5 +1,4 @@
-<div class="contact">
-  <!-- CONTACT -->
+<!-- <div class="contact">
   <div class="contorno">
     <form id="contact_form" name="contact_form" class="details-holder" novalidate>
       <h1 id="h1-contact" >Contacto</h1>
@@ -45,7 +44,6 @@
 
     </form>
   </div>
-  <!-- SUPPORT DIV -->
   <div class="support">
     <h1 id="h1-supp">Soporte</h1>
     <hr class="style-two">
@@ -56,4 +54,67 @@
       <button class="btn-supp" type="button" name="submit" id="btnDocument" ng-click="vm.SubmitDoc()" >Documentacion</button>
     </div>
   </div>
-</div>
+</div> -->
+
+<section id="contact" style="margin-top:4%;background:#f1f1f1;">
+  <div class="container text-center">
+    <div class="row">
+      <h1 class="title">Contáctanos</h1>
+
+      <h2 class="subtitle" style="padding-bottom:10px;">Vestimos tu hogar</h2>
+      <form role="form" id="contact_form" name="contact_form" class="contact-form" novalidate>
+        <div class="col-md-6 wow fadeInLeft" data-wow-delay=".5s">
+          <div class="form-group">
+            <div class="controls">
+              <input class="form-control" required ng-model="vm.inputName" id="inputName" class="input input-contact" type="text" name="inputName" placeholder="Nombre">
+              <p class="msg_error" ng-show="contact_form.inputName.$error.required && (contact_form.inputName.$dirty || contact_form.inputName.$touched)">*Campo requerido</p>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="controls">
+              <input class="form-control email" required ng-model="vm.inputEmail" id="inputEmail" type="email" name="inputEmail" placeholder="Email">
+              <p class="msg_error" ng-show="contact_form.inputEmail.$error.required && (contact_form.inputEmail.$dirty || contact_form.inputEmail.$touched)">*Campo requerido</p>
+              <p class="msg_error" ng-show="contact_form.inputEmail.$error.email && (contact_form.inputEmail.$dirty || contact_form.inputEmail.$touched)">*El email es incorrecto</p>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="controls">
+              <input class="form-control requiredField" required ng-model="vm.inputSubject" class="select input-contact" id="inputSubject" name="inputSubject" placeholder="Asunto">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="controls">
+              <textarea rows="7" class="form-control" placeholder="Mensaje" required ng-model="vm.inputMessage" id="inputMessage" type="text" name="inputMessage" style="max-width: 100%;"></textarea>
+              <p class="msg_error" ng-show="contact_form.inputMessage.$error.required && (contact_form.inputMessage.$dirty || contact_form.inputMessage.$touched)">*Campo requerido</p>
+            </div>
+          </div>
+          <button class="btn btn-lg btn-common" type="submit" name="submit" id="submitBtn" ng-click="vm.SubmitContact()">Enviar</button>
+          <div id="resultMessageOk" class="alert-success">{{vm.resultMessageOk}}</div>
+          <div id="resultMessageFail" class="alert-danger">{{vm.resultMessageFail}}</div>
+          <div id="success" style="color:#34495e;"></div>
+
+        </div>
+      </form>
+
+      <div class="col-md-6 wow fadeInRight">
+        <div class="social-links">
+          <a class="social" href="https://www.facebook.com/Decorhogar-Ontinyent-206027892899562/" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
+          <a class="social" href="#" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
+          <a class="social" href="#" target="_blank"><i class="fa fa-google-plus fa-2x"></i></a>
+          <a class="social" href="#" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a>
+        </div>
+        <div class="contact-info">
+          <p><i class="fa fa-map-marker"></i> Valencia, Ontinyent, Avda. Daniel Gil, 36, España</p>
+          <p><i class="fa fa-envelope"></i> decorhogarontinyent@hotmail.com</p>
+        </div>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+          in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>
+        </p>
+
+      </div>
+
+    </div>
+  </div>
+</section>

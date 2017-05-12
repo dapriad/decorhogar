@@ -10,29 +10,29 @@ exports.sendEmail = function(req, res) {
   switch (req.body.type) {
     case 'user':
       emailTo = req.body.from;
-      emailFrom = 'infogamebets@gmail.com';
+      emailFrom = 'dannyadri96@gmail.com';
 
       body = '<body>' +
         '<div id="contact-email">' +
-        '<div> <h1>Contacto con Gamebets</h1> <h4>Asunto: ' +
+        '<div> <h1>Contacto con Decorhogar</h1> <h4>Asunto: ' +
         req.body.subject +
         '</h4></div>' +
         '<section>' +
         '<p>El usuario ' +
         req.body.name +
-        ' ' + ' Ha enviado un correo a nuestro equipo de soporte' +
-        'el equipo de soporte de Gamebets, responderá su mail en breve, gracias.</p>' +
+        ' ' + ' Ha enviado un correo a nuestro equipo de soporte ' +
+        'el equipo de soporte de Decorhogar, responderá su mail en breve, gracias.</p>' +
         '</div>' +
         ' </body>';
       break;
 
     case 'admin':
-      emailTo = 'infogamebets@gmail.com';
+      emailTo = 'dannyadri96@gmail.com';
       emailFrom = req.body.from;
 
       body = '<body>' +
         '<div id="contact-email">' +
-        '<div> <h1>Contact with Gamebets</h1> <h4>Sugerence: ' + req.body.subject +
+        '<div> <h1>Contact with Decorhogar</h1> <h4>Sugerence: ' + req.body.subject +
         '</h4></div>' +
         '<section>' +
         'Name:<h3>' + req.body.name + '</h3>' +

@@ -11,6 +11,7 @@
     var service = {
       sendEmail: sendEmail,
       getPeople: getPeople,
+      getProducts: getProducts,
       getMessageCount: getMessageCount,
       chatInsertMessage: chatInsertMessage,
       chatGetMessages: chatGetMessages,
@@ -65,6 +66,20 @@
 
       function fail(e) {
         return exception.catcher('XHR Failed for getPeople')(e);
+      }
+    }
+
+    function getProducts() {
+      return $http.get('/api/products')
+        .then(success)
+        .catch(fail);
+
+      function success(response) {
+        return response.data;
+      }
+
+      function fail(e) {
+        return exception.catcher('XHR Failed for getProducts')(e);
       }
     }
 

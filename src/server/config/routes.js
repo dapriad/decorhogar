@@ -6,6 +6,8 @@ module.exports.init = function(app) {
 
   app.use('/api', require(routesPath + 'dashboard/dashboard.routes'));
 
+  app.use('/api', require(routesPath + 'products/products.routes'));
+
   app.use('/api', require(routesPath + 'contact/contact.routes'));
 
   app.use('/api', require(routesPath + 'login/login.routes'));

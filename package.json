@@ -28,8 +28,7 @@
     "passport-local": "^1.0.0",
     "passport-oauth": "^1.0.0",
     "passport-twitter": "^1.0.4",
-    "serve-favicon": "^2.0.1",
-    "socket.io": "^1.7.2"
+    "serve-favicon": "^2.0.1"
   },
   "devDependencies": {
     "browser-sync": "~2.11.2",

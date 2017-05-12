@@ -1,0 +1,21 @@
+/*
+Colores principales
+*/
+
+.decorhogar-azul {
+  color: #18223F !important;
+}
+
+.decorhogar-rojo {
+  color: #D5051F !important;
+}
+
+.decorhogar-blanco {
+  color: #F8F8F8 !important;
+}
+
+/* Home */
+
+.carousel {
+  height: auto;
+}

@@ -44,7 +44,8 @@
         $rootScope.user = '';
         $rootScope.displayName = '';
         $rootScope.logoutG = false;
-        $rootScope.generalG = false;
+        // Cambiar
+        $rootScope.generalG = true;
         $rootScope.picture = '';
       }
     }

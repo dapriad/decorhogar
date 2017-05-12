@@ -8,7 +8,6 @@ var cors = require('cors');
 var port = process.env.PORT || 8001;
 var four0four = require('./utils/404')();
 var http = require('http').Server(app);
-var io = require('socket.io')(http);
 var config = require('./config/routes');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
@@ -17,13 +16,6 @@ var session = require('express-session');
 
 var environment = process.env.NODE_ENV;
 
-io.on('connection', function(socket) {
-    console.log('Un cliente se ha conectado con id');
-    socket.on('new-message', function(data) {
-      console.log('HOLA');
-      socket.broadcast.emit('remit-message', data);
-    });
-});
 
 app.use(favicon(__dirname + '/favicon.ico'));
 app.use(bodyParser.urlencoded({

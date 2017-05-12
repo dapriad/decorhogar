@@ -13,8 +13,8 @@
   }
 
   var config = {
-    appErrorPrefix: '[GameBets Error] ',
-    appTitle: 'GameBets'
+    appErrorPrefix: '[Decorhogar Error] ',
+    appTitle: 'Decorhogar'
   };
 
   core.value('config', config);
