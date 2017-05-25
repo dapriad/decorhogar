@@ -1,13 +1,30 @@
 <section class="mainbar" style="margin-top:5%">
   <section class="matter">
     <div class="container">
-      <div class="col-md-4">
+      <div class="col-md-3">
         <h3>Filtros</h3>
         <div class="row" style="margin-right:50%; height:30vh;">
           Aqui van los filtros
+          <ul style="list-style:none;">
+            <li>Ordenar por:</li>
+            <li>Categoria</li>
+            <li>Telas</li>
+            <li>...</li>
+            <li style="padding-top:20px;"><button type="button" class="btn btn-default btn-lg btn-block" name="button">Ordenar</button></li>
+          </ul>
+        </div>
+        <div class="row" style="margin-right:50%; height:30vh;">
+          Aqui van los filtros
+          <ul style="list-style:none;">
+            <li>Filtrar por:</li>
+            <li>Categoria</li>
+            <li>Telas</li>
+            <li>...</li>
+            <li style="padding-top:20px;"><button type="button" class="btn btn-default btn-lg btn-block" name="button">Filtrar</button></li>
+          </ul>
         </div>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-9">
         <h2>Productos</h2>
         <div class="row" ng-hide="vm.products.length">
           No hay Productos disponibles ahora mismo, disculpe las molestias
