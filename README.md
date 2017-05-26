@@ -1,4 +1,4 @@
-# GameBets
+# Decorhogar
 
 **Generated from HotTowel Angular**
 

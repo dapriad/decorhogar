@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.17, for Linux (x86_64)
 --
--- Host: localhost    Database: GameBets_DB
+-- Host: localhost    Database: Decorhogar_DB
 -- ------------------------------------------------------
 -- Server version	5.7.17-0ubuntu0.16.04.1
 
