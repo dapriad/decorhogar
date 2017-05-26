@@ -10,7 +10,8 @@
   "scripts": {
     "init": "npm install",
     "install": "bower install",
-    "start": "PORT=8001 NODE_ENV=build node src/server/app.js",
+    "postinstall": "./node_modules/bower/bin/bower install",
+    "start": "node src/server/app.js",
     "test": "gulp test"
   },
   "dependencies": {
