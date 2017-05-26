@@ -1,32 +1,35 @@
 {
-  "name": "Decorhogar",
+  "name": "decorhogar",
   "description": "Decorhogar Project Generated from HotTowel Angular",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "engines": {
-     "node": "6.10.1"
+    "node": "6.10.1",
+    "npm": "3.10.10",
+    "bower": "1.8.0"
   },
   "scripts": {
     "init": "npm install",
     "install": "bower install",
-    "start": "node src/server/app.js",
-    "test": "gulp test",
-    "postinstall": "bower install",
-    "prestart": "bower install"
+    "start": "PORT=8001 NODE_ENV=build node src/server/app.js",
+    "test": "gulp test"
   },
   "dependencies": {
     "angular-passport": "^1.0.5",
     "angular-translate": "^2.14.0",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.8.2",
+    "bower": "^1.8.0",
     "cookie": "0.3.1",
     "cookie-parser": "~1.0.0",
     "cors": "^2.8.1",
     "express": "^4.9.3",
     "express-session": "^1.15.0",
+    "gulp": "^3.9.1",
     "morgan": "^1.1.1",
     "mysql": "^2.13.0",
     "nodemailer": "^2.1.0",
     "nodemailer-sendgrid-transport": "^0.2.0",
+    "nodemon": "^1.11.0",
     "passport": "^0.2.2",
     "passport-facebook": "^2.1.1",
     "passport-google-oauth": "^1.0.0",
@@ -44,7 +47,7 @@
     "debug": "^2.0.0",
     "del": "^1.2.0",
     "glob": "^4.5.3",
-    "gulp": "^3.8.10",
+    "gulp": "^3.9.1",
     "gulp-angular-templatecache": "^1.4.2",
     "gulp-autoprefixer": "^2.3.1",
     "gulp-bump": "^0.3.1",
