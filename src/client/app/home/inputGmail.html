@@ -1,5 +1,5 @@
 <md-dialog id="dialogEmail" style="width:100%">
-  <form ng-cloak id="projectForm" name="projectForm" ng-submit="saveEmail();" novalidate>
+  <form ng-cloak id="projectForm" name="projectForm" ng-submit="saveEmail(email);" novalidate>
     <md-toolbar>
       <div class="md-toolbar-tools decorhogar-rojoFondo">
         <h3>Introduce Gmail</h3>
@@ -16,7 +16,7 @@
         <div layout="row">
           <md-input-container class="md-block" style="width:100%">
             <label>Email</label>
-            <input required type="email" name="email" ng-model="project.email" minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+            <input required type="email" name="email" ng-model="email" minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
 
             <div ng-messages="projectForm.email.$error" role="alert">
               <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">

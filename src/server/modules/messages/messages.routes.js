@@ -2,8 +2,8 @@
 
 var express = require('express');
 var router = express.Router();
-var loginController = require('./messages.controller');
+var MessagesController = require('./messages.controller');
 
-router.post('/messages', loginController.signup);
+router.post('/messages', MessagesController.insertEmail);
 
 module.exports = router;

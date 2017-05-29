@@ -52,7 +52,7 @@
 
   }
 
-  function DialogController($scope, $mdDialog, dataservice) {
+  function DialogController($scope, $mdDialog, dataservice, logger) {
     $scope.hide = function() {
       $mdDialog.hide();
     };
@@ -65,17 +65,15 @@
       $mdDialog.hide(answer);
     };
 
-    $scope.saveEmail = function(email) {
+    $scope.saveEmail = function(mail) {
+      // console.log(email);
+      var email = {
+        email: mail
+      };
       dataservice.insertEmail(email).then(function(response) {
-        console.log(response);
-        if (response.email == email) {
-          logger.info('Email correcto');
-        } else {
-          logger.info('Este email ya esta subscrito');
-          console.log(response);
-        }
+          logger.info('Se ha suscrito correctamente');
       });
-    }
+    };
 
     $scope.showGmail = function() {
       $mdDialog.show({

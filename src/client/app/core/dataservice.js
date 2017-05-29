@@ -13,8 +13,6 @@
       getPeople: getPeople,
       getProducts: getProducts,
       getMessageCount: getMessageCount,
-      chatInsertMessage: chatInsertMessage,
-      chatGetMessages: chatGetMessages,
       signup: signup,
       ControllerSocialLogin: ControllerSocialLogin,
       localSignIn: localSignIn,
@@ -57,16 +55,18 @@
     }
 
     function insertEmail(data) {
+      console.log(data);
       return $http.post('/api/messages', data)
         .then(success)
         .catch(fail);
 
       function success(response) {
+        console.log(response);
         return response.data;
       }
 
       function fail(e) {
-        return exception.catcher('XHR Failed for sign up')(e);
+        return exception.catcher('XHR Failed for insert mail')(e);
       }
     }
 
@@ -109,34 +109,6 @@
 
       function fail() {
         return false;
-      }
-    }
-
-    function chatInsertMessage(data) {
-      return $http.post('/api/chat_insertMessage', data)
-        .then(sucess)
-        .catch(fail);
-
-      function sucess(response) {
-        return response.data;
-      }
-
-      function fail(e) {
-        return exception.catcher('XHR Failed for insertMessage')(e);
-      }
-    }
-
-    function chatGetMessages() {
-      return $http.get('/api/chat_getMessages')
-        .then(sucess)
-        .catch(fail);
-
-      function sucess(response) {
-        return response.data;
-      }
-
-      function fail(e) {
-        return exception.catcher('XHR Failed for insertMessage')(e);
       }
     }
 

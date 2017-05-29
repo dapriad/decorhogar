@@ -3,7 +3,16 @@ var mysql = require('./../../config/config.db');
 var modeloUsuarios = {};
 
 modeloUsuarios.insertUser = function(usuario, callback) {
+
   if (mysql.connection) {
+    console.log(usuario.email);
+    var query = 'INSERT INTO emails (email) values ("' + usuario.email + '")';
+
+    mysql.connection.query(query,function(err, result){
+      if (err) {
+        throw err;
+      }
+    });
     mysql.connection.query('INSERT INTO user_test SET ?', usuario, function(err, result) {
       if (err) {
         throw err;
