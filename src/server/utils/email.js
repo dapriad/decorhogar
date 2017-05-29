@@ -4,7 +4,7 @@ var sg = require('./../../../sendgrid.env');
 var emailTo = '';
 var emailFrom = '';
 var body = '';
-var modelMessages = require('../messages/messages.model.js');
+var modelMessages = require('../modules/messages/messages.model.js');
 
 exports.sendEmail = function(req, res) {
 

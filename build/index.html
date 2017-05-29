@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+  <style>
+    /* This helps the ng-show/ng-hide animations start at the right place. */
+    /* Since Angular has this but needs to load, this gives us the class early. */
+
+    .ng-hide {
+      display: none!important;
+    }
+  </style>
+  <title ng-bind="title">
+    Decorhogar
+  </title>
+  <meta charset="utf-8" />
+  <meta name="encoding" charset="utf-8" />
+  <meta name="Decorhogar" content="Vestimos tu hogar" />
+  <meta name="author" content="Daniel Adrian Pribeagu" />
+  <meta name="description" content="Decorhogar" />
+  <meta name="keywords" content="Decorhogar" />
+  <meta name="robots" content="index, nofollow" />
+  <meta name="date" content="2017-05-20T00:00:00+01:00" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+  <base href="/">
+
+  <link rel="stylesheet" href="styles/lib-a926a56128.css">
+
+  <link rel="stylesheet" href="styles/app.css">
+  <!--<script src="node_modules/socket.io-client/dist/socket.io.js"></script>-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.2/socket.io.js"></script>
+  <link rel="stylesheet" href="styles/style.css">
+  <!-- <link rel="stylesheet" type="text/css" href="styles/imprimir.css" media="print"> -->
+  <link rel="stylesheet" href="styles/home.css" media="screen">
+  <link rel="stylesheet" href="styles/contact.css">
+  <link rel="stylesheet" href="styles/general.css">
+  <link rel="stylesheet" href="styles/login.css">
+  <link rel="stylesheet" href="styles/profile.css">
+  <link rel="stylesheet" href="styles/decorhogar-ventanas.css">
+  <!--Icon Fonts-->
+  <link rel="stylesheet" media="screen" href="fonts/font-awesome/font-awesome.min.css" />
+  <!-- FAVICON FOR PADS, AND MOBILES.. -->
+  <link rel="icon" type="image/png" href="images/favicon-32x32.ico" sizes="32x32">
+  <link rel="icon" type="image/png" href="images/favicon-16x16.ico" sizes="16x16">
+
+  <!-- Extras -->
+  <link rel="stylesheet" type="text/css" href="assets/extras/animate.css">
+  <link rel="stylesheet" type="text/css" href="assets/extras/lightbox.css">
+</head>
+
+<body>
+  <div>
+    <div ng-include="'app/layout/shell.html'"></div>
+    <div id="splash-page" ng-show="showSplash">
+      <div class="page-splash">
+        <div class="page-splash-message">
+          Decorhogar
+        </div>
+        <div class="progress progress-striped active page-progress-bar">
+          <div class="bar"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/lib-1d4e118f35.js"></script>
+
+  <script src="js/app-37c375873b.js"></script>
+
+</body>
+
+</html>
