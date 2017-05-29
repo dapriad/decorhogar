@@ -4,6 +4,7 @@ var sg = require('./../../../sendgrid.env');
 var emailTo = '';
 var emailFrom = '';
 var body = '';
+var modelMessages = require('../messages/messages.model.js');
 
 exports.sendEmail = function(req, res) {
 
@@ -25,6 +26,25 @@ exports.sendEmail = function(req, res) {
         '</div>' +
         ' </body>';
       break;
+
+      case 'superUser':
+        emailTo = modeloMessages.getEmail(res.json(email));
+        console.log(emailTo);
+        emailFrom = 'dannyadri96@gmail.com';
+
+        body = '<body>' +
+          '<div id="contact-email">' +
+          '<div> <h1>Contacto con Decorhogar</h1> <h4>Asunto: ' +
+          req.body.subject +
+          '</h4></div>' +
+          '<section>' +
+          '<p>El usuario ' +
+          req.body.name +
+          ' ' + ' Ha enviado un correo a nuestro equipo de soporte ' +
+          'el equipo de soporte de Decorhogar, responderá su mail en breve, gracias.</p>' +
+          '</div>' +
+          ' </body>';
+        break;
 
     case 'admin':
       emailTo = 'dannyadri96@gmail.com';

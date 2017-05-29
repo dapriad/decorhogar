@@ -5,14 +5,6 @@ var modeloUsuarios = {};
 modeloUsuarios.insertUser = function(usuario, callback) {
 
   if (mysql.connection) {
-    console.log(usuario.email);
-    var query = 'INSERT INTO emails (email) values ("' + usuario.email + '")';
-
-    mysql.connection.query(query,function(err, result){
-      if (err) {
-        throw err;
-      }
-    });
     mysql.connection.query('INSERT INTO user_test SET ?', usuario, function(err, result) {
       if (err) {
         throw err;
@@ -66,7 +58,7 @@ modeloUsuarios.getUser = function(user, callback) {
 
 modeloUsuarios.getUserByEmail = function(email, callback) {
   if (mysql.connection) {
-    mysql.connection.query('SELECT * FROM user_test WHERE email like "' + email + '"',
+    mysql.connection.query('SELECT * FROM login WHERE email like "' + email + '"',
       function(error, rows) {
         if (error) {
           throw error;

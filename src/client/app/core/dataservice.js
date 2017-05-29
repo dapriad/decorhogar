@@ -15,8 +15,7 @@
       getMessageCount: getMessageCount,
       signup: signup,
       ControllerSocialLogin: ControllerSocialLogin,
-      localSignIn: localSignIn,
-      insertEmail:insertEmail
+      localSignIn: localSignIn
     };
 
     return service;
@@ -54,9 +53,9 @@
       }
     }
 
-    function insertEmail(data) {
+    function sendEmail(data) {
       console.log(data);
-      return $http.post('/api/messages', data)
+      return $http.post('/api/sendmail', data)
         .then(success)
         .catch(fail);
 
@@ -66,7 +65,7 @@
       }
 
       function fail(e) {
-        return exception.catcher('XHR Failed for insert mail')(e);
+        return exception.catcher('XHR Failed for send mail')(e);
       }
     }
 
