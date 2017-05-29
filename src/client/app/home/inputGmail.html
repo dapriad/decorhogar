@@ -1,0 +1,33 @@
+<md-dialog id="dialogEmail" style="width:100%">
+  <form ng-cloak id="projectForm" name="projectForm" ng-submit="saveEmail();" novalidate>
+    <md-toolbar>
+      <div class="md-toolbar-tools decorhogar-rojoFondo">
+        <h3>Introduce Gmail</h3>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-src="images/icons/ic_clear_white_24px.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <h2 style="padding-bottom:10px" class="decorhogar-azul">Introduce tu email</h2>
+        <div layout="row">
+          <md-input-container class="md-block" style="width:100%">
+            <label>Email</label>
+            <input required type="email" name="email" ng-model="project.email" minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+
+            <div ng-messages="projectForm.email.$error" role="alert">
+              <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                Email incorrecto.
+              </div>
+            </div>
+          </md-input-container>
+          <md-button type="submit"> Enviar </md-button>
+
+        </div>
+
+    </md-dialog-content>
+  </form>
+</md-dialog>

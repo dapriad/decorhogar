@@ -1,0 +1,38 @@
+<md-dialog id="dialogHome" >
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools decorhogar-rojoFondo">
+        <h2>Publicaciones</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="vm.cancel()">
+          <md-icon md-svg-src="images/icons/ic_clear_white_24px.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <h2 style="padding-bottom:10px">Suscribete a nuestro boletin de noticias</h2>
+        <p style="font-size: 1.5em;">
+          ¿Te gustaría redecorar tu casa? <br>
+          ¿Aprender algún consejo de cómo limpiar alguna mancha imposible? <br>
+          Este es tu lugar suscribete ya y estate al día de todos nuestros consejos de la semana. No te arrepentirás.
+          Ves a nuestra galeria y comprueba por ti mismo el acabado de los trabajos. No te defraudarán.
+          <br><span class="decorhogar-azul" style="font-size:1.5em;" ng-click="vm.hide();" ui-sref="products">Galería</span>
+          <br><span class="decorhogar-azul" style="font-size:1.5em;" ng-click="vm.hide();" ui-sref="contact">También puedes contactar con nosotros desde aquí.</span>
+        </p>
+
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <span class="decorhogar-azul" style="font-size:1.4em;">Subscribete aquí</span>
+      <md-button class="md-fab roundedIcon color-facebook" aria-label="Facebook" target="_self" href="/auth/facebook">
+        <md-icon md-svg-src="images/icons/facebook-logo.svg"></md-icon>
+      </md-button>
+      <md-button class="md-fab roundedIcon color-email" aria-label="Correo electronico" ng-click="showGmail()">
+        <md-icon md-svg-src="images/icons/arroba-sign.svg"></md-icon>
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

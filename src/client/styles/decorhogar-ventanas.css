@@ -14,8 +14,51 @@ Colores principales
   color: #F8F8F8 !important;
 }
 
+.decorhogar-azulFondo {
+  background-color: #18223F !important;
+}
+
+.decorhogar-rojoFondo {
+  background-color: #D5051F !important;
+}
+
+.decorhogar-blancoFondo {
+  background-color: #F8F8F8 !important;
+}
+
+.color-facebook {
+  color: #3b5998 !important;
+  background-color: #3b5998 !important;
+}
+
+.color-gmail {
+  color: #c71610 !important;
+  background-color: #c71610 !important;
+}
+
+.color-email {
+  color: #ffcc66 !important;
+  background-color: #ffcc66 !important;
+}
+
+
 /* Home */
 
 .carousel {
   height: auto;
 }
+
+
+/* modal */
+
+#dialogHome .roundedIcon {
+  border-radius: 50% !important;
+}
+
+#dialogEmail .inputdemoErrors .inputErrorsApp {
+  min-height: 48px; }
+
+#dialogEmail .inputdemoErrors md-input-container > p {
+  font-size: 0.8em;
+  text-align: left;
+  width: 100%; }

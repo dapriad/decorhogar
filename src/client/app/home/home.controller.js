@@ -5,12 +5,20 @@
     .module('app.home')
     .controller('HomeController', HomeController);
 
-  HomeController.$inject = ['$q', 'dataservice', 'logger', '$scope'];
+  HomeController.$inject = ['$q', '$state', 'dataservice', 'logger', '$scope', '$mdDialog'];
   /* @ngInject */
-  function HomeController($q, dataservice, logger, $scope) {
+  function HomeController($q, $state, dataservice, logger, $scope, $mdDialog) {
     var vm = this;
+    $scope.status = '  ';
+    vm.goProducts = goProducts;
 
-    activate();
+    showAdvanced();
+
+    function goProducts() {
+      console.log("hola");
+      $mdDialog.hide();
+      $state.go('products');
+    }
 
     $(document).ready(function() {
       $('.carousel').slick({
@@ -23,10 +31,66 @@
       });
     });
 
+    function showAdvanced() {
+      $mdDialog.show({
+          controller: DialogController,
+          templateUrl: 'app/home/newsletterHome.html',
+          parent: angular.element(document.body),
+          clickOutsideToClose: true,
+          fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
+        })
+        .then(function(answer) {
+          $scope.status = 'You said the information was "' + answer + '".';
+        }, function() {
+          $scope.status = 'You cancelled the dialog.';
+        });
+    };
+
     function activate() {
       logger.info('Activated Home View');
-
     }
+
+  }
+
+  function DialogController($scope, $mdDialog, dataservice) {
+    $scope.hide = function() {
+      $mdDialog.hide();
+    };
+
+    $scope.cancel = function() {
+      $mdDialog.cancel();
+    };
+
+    $scope.answer = function(answer) {
+      $mdDialog.hide(answer);
+    };
+
+    $scope.saveEmail = function(email) {
+      dataservice.insertEmail(email).then(function(response) {
+        console.log(response);
+        if (response.email == email) {
+          logger.info('Email correcto');
+        } else {
+          logger.info('Este email ya esta subscrito');
+          console.log(response);
+        }
+      });
+    }
+
+    $scope.showGmail = function() {
+      $mdDialog.show({
+          controller: DialogController,
+          templateUrl: 'app/home/inputGmail.html',
+          parent: angular.element(document.body),
+          clickOutsideToClose: true,
+          fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
+        })
+        .then(function(answer) {
+          $scope.status = 'You said the information was "' + answer + '".';
+        }, function() {
+          $scope.status = 'You cancelled the dialog.';
+        });
+    };
 
   }
 })();

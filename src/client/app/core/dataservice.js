@@ -17,7 +17,8 @@
       chatGetMessages: chatGetMessages,
       signup: signup,
       ControllerSocialLogin: ControllerSocialLogin,
-      localSignIn: localSignIn
+      localSignIn: localSignIn,
+      insertEmail:insertEmail
     };
 
     return service;
@@ -43,6 +44,20 @@
 
     function signup(data) {
       return $http.post('/api/users_signup', data)
+        .then(success)
+        .catch(fail);
+
+      function success(response) {
+        return response.data;
+      }
+
+      function fail(e) {
+        return exception.catcher('XHR Failed for sign up')(e);
+      }
+    }
+
+    function insertEmail(data) {
+      return $http.post('/api/messages', data)
         .then(success)
         .catch(fail);
 
